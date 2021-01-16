@@ -2,7 +2,7 @@
 var tableData = data;
 
 // Build a callable function to append data
-function appenData(inputData) {
+function buildData(inputData) {
     // Get a reference to the table body
     var tbody = d3.select("tbody");
 
@@ -24,10 +24,9 @@ function appenData(inputData) {
 };
 
 // Show all data as a default page
-appenData(tableData);
+buildData(tableData);
 
 // ------- Using form to filter data -------
-
 // Select the button & form
 var button = d3.select("#filter-btn");
 var form = d3.select("#form");
@@ -57,9 +56,9 @@ function runEnter() {
     };
 
     // Print out the input value
-    console.log(ufoFilter)
+    console.log(ufoFilter);
 
-    // Get filtered data  event.datetime === valueDatetime
+    // Get filtered data
     var filteredData = tableData.filter(event => {
         for (var key in ufoFilter) {
             // Only compare keys with values rather than empty string
@@ -72,5 +71,5 @@ function runEnter() {
     });
     
     // Show filtered data
-    appenData(filteredData);
+    buildData(filteredData);
 };
