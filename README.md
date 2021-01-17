@@ -1,4 +1,4 @@
-# JavaScript-Challenge
+# UFO Event Dashboard - With Multiple Filters
 This project can create a table dynamically based upon a dataset, allowing our users to filter the table data for specific values, which is based on JavaScript, HTML, and CSS, and D3.js.
 
 ## Files Index
