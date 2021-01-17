@@ -9,7 +9,7 @@ Following files are attached:
 
 2. <a href="https://github.com/kk-deng/JavaScript-Challenge/blob/main/UFO-level-2/static/js/app.js">app.js</a>: Main D3 JavaScript file to populate data dynamically. 
 
-## Select elements with D3.js
+## Summary of functions
 
 * A function which takes input data array to append data into HTML:
 
