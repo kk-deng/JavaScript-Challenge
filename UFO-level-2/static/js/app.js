@@ -1,13 +1,13 @@
 // from data.js
 var tableData = data;
 
-// Build a callable function to append data
+// Build a callable function to convert data into a table
 function buildData(inputData) {
     // Get a reference to the table body
     var tbody = d3.select("tbody");
 
     // Clean the existing codes inside tbody html
-    tbody.html("")
+    tbody.html("");
 
     // Loop through the data list
     inputData.forEach(event => {
@@ -29,11 +29,11 @@ buildData(tableData);
 // ------- Using form to filter data -------
 // Select the button & form
 var button = d3.select("#filter-btn");
-var form = d3.select("#form");
+var form = d3.select("form");
 
 // Create event handlers for clicking the button or pressing enter key
 button.on("click", runEnter);
-form.on("submit", runEnter);
+form.on("change", runEnter);
 
 function runEnter() {
     // Prevent the page from refreshing after submitting
@@ -55,9 +55,6 @@ function runEnter() {
         shape: inputShape.value
     };
 
-    // Print out the input value
-    console.log(ufoFilter);
-
     // Get filtered data
     var filteredData = tableData.filter(event => {
         for (var key in ufoFilter) {
@@ -72,4 +69,16 @@ function runEnter() {
     
     // Show filtered data
     buildData(filteredData);
+};
+
+function resetTable() {
+    // Clear out all input values
+    d3.select("#datetime").node().value = "";
+    d3.select("#city").node().value = "";
+    d3.select("#state").node().value = "";
+    d3.select("#country").node().value = "";
+    d3.select("#shape").node().value = "";
+    
+    // Show all data as a default page
+    buildData(tableData);
 };
